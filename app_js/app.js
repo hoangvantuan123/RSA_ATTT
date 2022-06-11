@@ -74,19 +74,30 @@ function getInputValue() {
   var q = document.getElementById("q").value;
   var e = document.getElementById("e").value;
 
-
+  document.getElementById("divx").innerHTML = x;
+  document.getElementById("divq").innerHTML = q;
+  document.getElementById("dive").innerHTML = e;
+  document.getElementById("divp").innerHTML = p;
+  document.getElementById("divn").innerHTML = n(p, q);
+  document.getElementById("divd").innerHTML = modInverse(e, phi(p, q));
 
   //
   document.getElementById("inx").innerHTML = x;
-
   document.getElementById("n").innerHTML = n(p, q);
   document.getElementById("phi").innerHTML = phi(p, q);
   document.getElementById("gcd").innerHTML = gcd(e, phi(p, q));
   document.getElementById('d').innerHTML = modInverse(e, phi(p, q));
   document.getElementById("mahoa").innerHTML=mpmod(x,e,n(p, q));
   document.getElementById("giaima").innerHTML =mpmod(mpmod(x,e,n(p, q)),modInverse(e, phi(p, q)),  n(p, q));
-  // Tong Ket
+  //
+  document.getElementById("khoacongkhai").innerHTML= e ;
+  document.getElementById("khoacongkhai2").innerHTML=  n(p, q);
 
+  //
   document.getElementById("banro").innerHTML= x;
   document.getElementById("banma").innerHTML =mpmod(x,e,n(p, q));
+
+
+  document.getElementById("khoabimat").innerHTML = modInverse(e, phi(p, q));
+  document.getElementById("khoabimat2").innerHTML = n(p, q);
 }

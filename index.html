@@ -5,77 +5,139 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RSA</title>
+    <link rel="stylesheet" href="./app_css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Roboto+Slab:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
-<body ng-app="public-key-crypto-js" ng-controller="RSAController" class="container">
+<body>
 
-    <h1>Xây dựng hệ mật RSA</h1>
 
-    <p><strong>Nhập các thông tin đầu vào:</strong></p>
+    <div class="wrapper">
 
-    <form class="row">
-        <div class="col_1">
-            <label for="">NHAP VAO X: </label>
-            <input type="text" placeholder="x = ?" id="x" required> <br> <br>
-        </div>
-        <div class="col_2">
-            <label for="">NHAP VAO P</label>
-            <input type="text" placeholder="p = ?" id="p" required> <br> <br>
-        </div>
-        <div class="col_3">
-            <label for="">NHAP VAO Q: </label>
-            <input type="text" placeholder="q = ?" id="q" required> <br> <br>
-        </div>
-        <div class="col_4">
-            <label for="">NHAP VAO E: </label>
-            <input type="text" placeholder="e = ?" id="e" required> <br> <br>
-        </div>
-        <button class="btn" type="button" onclick="getInputValue();">Get Value</button>
-        <hr>
-        <div class="All">
-            <div class="Nhan">
-                n = p * q = <span id="n" style="color: #ff0000"></span>
-            </div>
-            <div class="Phi">
-                m = &#216;(n) = (p -1 )* (q -1) = <span id="phi" style="color: #ff0000"></span>
-            </div>
-            <div class="GCD">
-                GCD() = <span id="gcd" style="color: #ff0000"></span>
-                <div>
-                    <span id="get" style="color: #ff0000"></span>
-                    <!--  <p style="color:red">gcd(e, m) = <code>{{g}} != 1</code> ==&gt; e được chọn không thỏa mãn !</p> -->
+        <h1>Xây dựng hệ mật RSA</h1>
+        <form class="content">
+
+            <div class="col-md-from">
+                <h2>Nhập thông tin đầu vào</h2>
+                <div class="form-group">
+                    <div class="col_1">
+                        <label for="">Nhập X: </label> <br>
+                        <input type="text" placeholder="x = ?" id="x" required> <br> <br>
+                    </div>
+                    <div class="col_2">
+                        <label for="">Nhập P:</label> <br>
+                        <input type="text" placeholder="p = ?" id="p" required> <br> <br>
+                    </div>
+                    <div class="col_3">
+                        <label for="">Nhập Q: </label> <br>
+                        <input type="text" placeholder="q = ?" id="q" required> <br> <br>
+                    </div>
+                    <div class="col_4">
+                        <label for="">Nhập E: </label> <br>
+                        <input type="text" placeholder="e = ?" id="e" required> <br> <br>
+                    </div>
+                </div>
+                <div class="form-btn">
+                    <br>
+                    <button class="btn" type="button" onclick="getInputValue();">Get Value</button>
                 </div>
             </div>
-            <div class="Euclid">
-                <h1>Buoc 1: Tinh khoa bi mat d</h1>
-                <h2>ÁP Dụng Thuật Toán Euclid mở rộng :</h2>
-                d = e ^ -1 mod m = <span id="d" style="color: #ff0000"></span>
-            </div>
-            <div class="mahoa">
-                <h1>Buoc 2: Ma hoa ban ro x= <span id="inx"></span></h1>
-                <h2>ÁP Dụng Thuật Toán :</h2>
-                y = x ^ e mod n = <span id="mahoa" style="color: #ff0000"></span>
-            </div>
-            <div class="giaima">
-                <h1>Buoc 3: Giai ma y= <span id="mahoa"></span> Khi biết d = <span id="d"></span> , n = <span
-                        id="n"></span> </h1>
-                <h2>ÁP Dụng Thuật Toán :</h2>
-                x = y ^ d mod n= <span id="giaima" style="color: #ff0000"></span>
-            </div>
-        </div>
-        <div>
-            <h2>Tổng Kết</h2>
-            <h4>
-                Bản rõ X : <span id="banro"></span>
-            </h4>
-            <h4>
-                Bản Mã Y : <span id="banma"></span>
-            </h4>
-        </div>
-    </form>
 
-    <script src="./app.js"></script>
+            <div class="parent">
+                <div class="div1">
+                    <div class="Nhan">
+                        n = p * q = <span id="n" style="color: #ff0000"></span>
+                    </div>
+                    <div class="Phi">
+                        m = &#216;(n) = (p -1 )* (q -1) = <span id="phi" style="color: #ff0000"></span>
+                    </div>
+                    <div class="GCD">
+                        GCD(e, m) = <span id="gcd" style="color: #ff0000"></span>
+                        <div>
+                            <span id="get" style="color: #ff0000"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div2">
+                    <ul>
+                        <li>
+                            x = <span id="divx" style="color: #ff0000"></span>
+                        </li>
+                        <li>
+                            q = <span id="divq" style="color: #ff0000"></span>
+                        </li>
+                        <li>
+                            e = <span id="dive" style="color: #ff0000"></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            p = <span id="divp" style="color: #ff0000"></span>
+                        </li>
+                        <li>
+                            n = <span id="divn" style="color: #ff0000"></span>
+                        </li>
+                        <li>
+                            d = <span id="divd" style="color: #ff0000"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="div3">
+                    <div class="Euclid">
+                        <h3>- Tính khóa bí mật d: </h3>
+                        d = e ^ -1 mod m = <span id="d" style="color: #ff0000"></span>
+                    </div>
+                    <div class="mahoa">
+                        <h3>Mã hóa văn bản rõ x = <span id="inx" style="color: #ff0000"></span></h3>
+                        y = x ^ e mod n = <span id="mahoa" style="color: #ff0000"></span>
+                    </div>
+                    <div class="giaima">
+                        <h3>Giải mã y = <span id="mahoa"></span> khi biết d = <span id="d"></span> và n = <span
+                                id="n"></span> </h3>
+                        x = y ^ d mod n= <span id="giaima" style="color: #ff0000"></span>
+                    </div>
+                </div>
+                <div class="div4">
+                    <div>
+                        <h2>Tổng Kết</h2>
+                        <svg width="665" height="1" viewBox="0 0 665 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1.49847" y1="0.5" x2="663.501" y2="0.5" stroke="black" stroke-linecap="round"
+                                stroke-dasharray="15 15" />
+                        </svg>
+                        <div class="div4_log">
+
+                            <ul>
+                                <li>Khóa công khai: </li>
+                                <li>Khóa bí mật:</li>
+                                <li>Bản rõ x: </li>
+                                <li>Bản mã y: </li>
+                            </ul>
+                            <ul>
+                                <li>(e , n) = ( <span id="khoacongkhai" style="color: #ff0000"></span> ,<span
+                                        id="khoacongkhai2" style="color: #ff0000"></span> ) </li>
+                                <li> (d , n) = (<span id="khoabimat" style="color: #ff0000"></span> , <span
+                                        id="khoabimat2" style="color: #ff0000"></span> ) </li>
+                                <li><span id="banro" style="color: #ff0000"></span></li>
+                                <li><span id="banma" style="color: #ff0000"></span></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+
+    <script src="./app_js/app.js"></script>
 </body>
 
 </html>
