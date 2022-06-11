@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body ng-app="public-key-crypto-js" ng-controller="RSAController" class="container">
+
+    <h1>Xây dựng hệ mật RSA</h1>
+
+    <p><strong>Nhập các thông tin đầu vào:</strong></p>
+
+    <form class="row">
+        <div class="col_1">
+            <label for="">NHAP VAO X: </label>
+            <input type="text" placeholder="x = ?" id="x" required> <br> <br>
+        </div>
+        <div class="col_2">
+            <label for="">NHAP VAO P</label>
+            <input type="text" placeholder="p = ?" id="p" required> <br> <br>
+        </div>
+        <div class="col_3">
+            <label for="">NHAP VAO Q: </label>
+            <input type="text" placeholder="q = ?" id="q" required> <br> <br>
+        </div>
+        <div class="col_4">
+            <label for="">NHAP VAO E: </label>
+            <input type="text" placeholder="e = ?" id="e" required> <br> <br>
+        </div>
+        <button class="btn" type="button" onclick="getInputValue();">Get Value</button>
+        <hr>
+        <div class="All">
+            <div class="Nhan">
+                n = p * q = <span id="n" style="color: #ff0000"></span>
+            </div>
+            <div class="Phi">
+                m = &#216;(n) = (p -1 )* (q -1) = <span id="phi" style="color: #ff0000"></span>
+            </div>
+            <div class="GCD">
+                GCD() = <span id="gcd" style="color: #ff0000"></span>
+                <div>
+                    <span id="get" style="color: #ff0000"></span>
+                    <!--  <p style="color:red">gcd(e, m) = <code>{{g}} != 1</code> ==&gt; e được chọn không thỏa mãn !</p> -->
+                </div>
+            </div>
+            <div class="Euclid">
+                <h1>Buoc 1: Tinh khoa bi mat d</h1>
+                <h2>ÁP Dụng Thuật Toán Euclid mở rộng :</h2>
+                d = e ^ -1 mod m = <span id="d" style="color: #ff0000"></span>
+            </div>
+            <div class="mahoa">
+                <h1>Buoc 2: Ma hoa ban ro x= <span id="inx"></span></h1>
+                <h2>ÁP Dụng Thuật Toán :</h2>
+                y = x ^ e mod n = <span id="mahoa" style="color: #ff0000"></span>
+            </div>
+            <div class="giaima">
+                <h1>Buoc 3: Giai ma y= <span id="mahoa"></span> Khi biết d = <span id="d"></span> , n = <span
+                        id="n"></span> </h1>
+                <h2>ÁP Dụng Thuật Toán :</h2>
+                x = y ^ d mod n= <span id="giaima" style="color: #ff0000"></span>
+            </div>
+        </div>
+        <div>
+            <h2>Tổng Kết</h2>
+            <h4>
+                Bản rõ X : <span id="banro"></span>
+            </h4>
+            <h4>
+                Bản Mã Y : <span id="banma"></span>
+            </h4>
+        </div>
+    </form>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
