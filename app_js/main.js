@@ -2,11 +2,11 @@
 function n(p, q) {
   return p * q;
 }
-
+/* Tinh  phi  */
 function phi(p, q) {
   return (p - 1) * (q - 1);
 }
-
+// Tinh GCD
 function gcd(a, b) {
   var R;
   while ((a % b) > 0) {
@@ -55,7 +55,7 @@ function modInverse(a, m) {
 // Tính mod: a^e mod n
 function mpmod(base, exponent, modulus) {
   if ((base < 1) || (exponent < 0) || (modulus < 1)) {
-    return("invalid");
+    return ("invalid");
   }
   result = 1;
   while (exponent > 0) {
@@ -65,12 +65,12 @@ function mpmod(base, exponent, modulus) {
     base = (base * base) % modulus;
     exponent = Math.floor(exponent / 2);
   }
-return (result);
+  return (result);
 }
 
 
 
-function getInputValue(){
+ function getInputValue() {
 
   var x = document.getElementById("x").value;
   var p = document.getElementById("p").value;
@@ -90,20 +90,20 @@ function getInputValue(){
   document.getElementById("phi").innerHTML = phi(p, q);
   document.getElementById("gcd").innerHTML = gcd(e, phi(p, q));
   document.getElementById('d').innerHTML = modInverse(e, phi(p, q));
-  document.getElementById("mahoa").innerHTML=mpmod(x,e,n(p, q));
-  document.getElementById("giaima").innerHTML =mpmod(mpmod(x,e,n(p, q)),modInverse(e, phi(p, q)),  n(p, q));
+  document.getElementById("mahoa").innerHTML = mpmod(x, e, n(p, q));
+  document.getElementById("giaima").innerHTML = mpmod(mpmod(x, e, n(p, q)), modInverse(e, phi(p, q)), n(p, q));
   /*  */
-  document.getElementById("banma") .innerHTML = mpmod(x,e,n(p, q));
-  document.getElementById("khoad") .innerHTML = modInverse(e, phi(p, q));
-  document.getElementById("nhan").innerHTML= n(p, q);
+  document.getElementById("banma").innerHTML = mpmod(x, e, n(p, q));
+  document.getElementById("khoad").innerHTML = modInverse(e, phi(p, q));
+  document.getElementById("nhan").innerHTML = n(p, q);
 
   //
-  document.getElementById("khoacongkhai").innerHTML= e ;
-  document.getElementById("khoacongkhai2").innerHTML=  n(p, q);
+  document.getElementById("khoacongkhai").innerHTML = e;
+  document.getElementById("khoacongkhai2").innerHTML = n(p, q);
 
   //
-  document.getElementById("banro").innerHTML= x;
-  document.getElementById("banma2").innerHTML =mpmod(x,e,n(p, q));
+  document.getElementById("banro").innerHTML = x;
+  document.getElementById("banma2").innerHTML = mpmod(x, e, n(p, q));
 
 
   document.getElementById("khoabimat").innerHTML = modInverse(e, phi(p, q));
