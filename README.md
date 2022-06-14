@@ -6,6 +6,6 @@ Thuật toán RSA có hai khóa: khóa công khai (hay khóa công cộng) và k
 # Tạo khóa
 1. Chọn 2 số nguyên tố lớn p và q với q != q, lựa chọn ngẫu nhiên và độc lập.
 2. Tính n = p * q
-3. Tính giá trị hàm số Euler {\displaystyle \phi (n)=(p-1)(q-1)\,}.
-4.Chọn một số tự nhiên tự nhiên e sao cho 1 < e < {\displaystyle \phi (n)} và là số nguyên tố cùng nhau với {\displaystyle \phi (n)}
-5.Tính: d sao cho {\displaystyle de\equiv 1{\pmod {\phi (n)}}}. (Đồng dư[link:https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93ng_d%C6%B0?tableofcontents=1])
+3. Tính giá trị hàm số Euler &#216;(n)=(p-1)(q-1).
+4.Chọn một số tự nhiên tự nhiên e sao cho 1 < e < 	&#216;(n) và là số nguyên tố cùng nhau với &#216;(n).
+5.Tính: d sao cho de &#926; 1 . ([Đồng dư](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93ng_d%C6%B0?tableofcontents=1)
