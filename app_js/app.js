@@ -1,3 +1,4 @@
+
 function n(p, q) {
   return p * q;
 }
@@ -13,10 +14,13 @@ function gcd(a, b) {
     a = b;
     b = R;
   }
+  if (b !== 1) {
+    alert("GCD(e,m) của bạn không thỏa mãn! ");
+  }
   return b;
 
 }
-
+// Tinh module nghịch đảo
 function modInverse(a, m) {
   // validate inputs
   [a, m] = [Number(a), Number(m)]
@@ -48,7 +52,7 @@ function modInverse(a, m) {
   }
   return (y % m + m) % m
 }
-
+// Tính mod: a^e mod n
 function mpmod(base, exponent, modulus) {
   if ((base < 1) || (exponent < 0) || (modulus < 1)) {
     return("invalid");
@@ -66,8 +70,7 @@ return (result);
 
 
 
-
-function getInputValue() {
+function getInputValue(){
 
   var x = document.getElementById("x").value;
   var p = document.getElementById("p").value;
@@ -89,13 +92,18 @@ function getInputValue() {
   document.getElementById('d').innerHTML = modInverse(e, phi(p, q));
   document.getElementById("mahoa").innerHTML=mpmod(x,e,n(p, q));
   document.getElementById("giaima").innerHTML =mpmod(mpmod(x,e,n(p, q)),modInverse(e, phi(p, q)),  n(p, q));
+  /*  */
+  document.getElementById("banma") .innerHTML = mpmod(x,e,n(p, q));
+  document.getElementById("khoad") .innerHTML = modInverse(e, phi(p, q));
+  document.getElementById("nhan").innerHTML= n(p, q);
+
   //
   document.getElementById("khoacongkhai").innerHTML= e ;
   document.getElementById("khoacongkhai2").innerHTML=  n(p, q);
 
   //
   document.getElementById("banro").innerHTML= x;
-  document.getElementById("banma").innerHTML =mpmod(x,e,n(p, q));
+  document.getElementById("banma2").innerHTML =mpmod(x,e,n(p, q));
 
 
   document.getElementById("khoabimat").innerHTML = modInverse(e, phi(p, q));

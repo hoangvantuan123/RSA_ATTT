@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-btn">
                     <br>
-                    <button class="btn" type="button" onclick="getInputValue();">Get Value</button>
+                    <button class="btn" type="button" onclick="getInputValue()">Get Value</button>
                 </div>
             </div>
 
@@ -93,13 +93,15 @@
                         <h3>- Tính khóa bí mật d: </h3>
                         d = e ^ -1 mod m = <span id="d" style="color: #ff0000"></span>
                     </div>
-                    <div class="mahoa">
-                        <h3>Mã hóa văn bản rõ x = <span id="inx" style="color: #ff0000"></span></h3>
+                    <!-- ban ma = ma hoa -->
+                    <div class="mahoa ">
+                        <h3>Bản mã văn bản rõ x = <span id="inx" style="color: #ff0000"></span></h3>
                         y = x ^ e mod n = <span id="mahoa" style="color: #ff0000"></span>
                     </div>
                     <div class="giaima">
-                        <h3>Giải mã y = <span id="mahoa"></span> khi biết d = <span id="d"></span> và n = <span
-                                id="n"></span> </h3>
+                        <h3>Giải mã y = <span id="banma" style="color: #ff0000"></span> khi biết d = <span id="khoad"
+                                style="color: #ff0000"></span> và n = <span id="nhan" style="color: #ff0000"></span>
+                        </h3>
                         x = y ^ d mod n= <span id="giaima" style="color: #ff0000"></span>
                     </div>
                 </div>
@@ -124,7 +126,7 @@
                                 <li> (d , n) = (<span id="khoabimat" style="color: #ff0000"></span> , <span
                                         id="khoabimat2" style="color: #ff0000"></span> ) </li>
                                 <li><span id="banro" style="color: #ff0000"></span></li>
-                                <li><span id="banma" style="color: #ff0000"></span></li>
+                                <li><span id="banma2" style="color: #ff0000"></span></li>
                             </ul>
                         </div>
 
@@ -135,7 +137,6 @@
 
         </form>
     </div>
-
 
     <script src="./app_js/app.js"></script>
 </body>
